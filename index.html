@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr" ng-app="weatherMoodApp">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Weather Mood</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.js"></script>
+    <script src="controller.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lobster+Two" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed" rel="stylesheet">
+</head>
+
+<body ng-controller="openWeather">
+
+    <div id="kitkit">
+        <h1>WeatherMood</h1>
+    </div>
+    <form ng-submit="addCity()">
+        <fieldset>
+            <label for="prenom">Entre le nom d'une city, d'une ville, voire d'une town ou d'une megalop si t'as envie :</label><br/>
+            <input type="text" ng-model="ville" required>
+            <button type="submit">Ajouter</button>
+        </fieldset>
+    </form>
+
+
+    <div ng-if="meteo =='Clear'" style="background-image: url(https://media.giphy.com/media/paMdZlRXlc96o/giphy.gif); position: absolute; width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/005-sea.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965550382"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+
+
+    <div ng-if="meteo =='Clouds'" style="background-image: url(https://media.giphy.com/media/C3ZCyLpZzvOEM/giphy.gif); position: absolute;  width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/001-sky-2.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965578242"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+
+
+    <div ng-if="meteo =='Rain'" style="background-image: url(http://38.media.tumblr.com/834d72ef32d84b400266a4aa6661ff31/tumblr_n26039VliX1r3nnfeo1_500.gif); position: absolute; width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/004-sky-1.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965591402"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+
+
+    <div ng-if="meteo =='Thunderstorm'" style="background-image: url(http://25.media.tumblr.com/tumblr_m9y0mzDDN51r4zr2vo1_500.gif); position: absolute; width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/002-sky.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965585482"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+
+
+    <div ng-if="meteo =='Fog'" style="background-image: url(https://imgur.com/OAUXHSb); position: absolute; width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/006-weather.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965599182"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+    <div ng-if="meteo =='Snow'" style="background-image: url(https://68.media.tumblr.com/6d43f44cf6b3dd5785b12f617aade75b/tumblr_oim0smB2TO1qa0jkro1_500.gif); position: absolute; width: 100%; height: 100%; top: 0; background-repeat: no-repeat; background-size: cover;"
+        id="background" class="type">
+        <table>
+            <tr>
+                <td>
+                    {{annonce}}
+                    <img src="icons/png/003-nature.png">
+                </td>
+            </tr>
+        </table>
+        <div class="fourrage">
+            <iframe scrolling="no" frameborder="0" margin="100px" position="absolute" allowTransparency="true" src="http://www.deezer.com/plugins/player?format=classic&autoplay=true&playlist=true&width=500&height=250&color=20B2AA&layout=dark&size=medium&type=playlist&id=2965610142"
+                width="500" height="250">
+            </iframe>
+        </div>
+    </div>
+
+</body>
+
+</html>
